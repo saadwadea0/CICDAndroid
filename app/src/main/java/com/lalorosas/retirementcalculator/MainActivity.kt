@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
                 val monthly = monthlySavingsEditText.text.toString().toFloat()
                 val current = currentEditText.text.toString().toFloat()
 
-                val properties:HashMap<String, String> = HashMap<String, String>()
+                val properties:HashMap<String, String> = HashMap()
                 properties.put("interest_rate", interestRate.toString())
                 properties.put("current_age", currentAge.toString())
                 properties.put("retirement_age", retirementAge.toString())
@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
                 if (retirementAge <= currentAge) {
                     Analytics.trackEvent("wrong_age", properties)
                 }
+                resultTextView.text="At the current rate of $interestRate%, saving \$$monthly"
             } catch(ex: Exception){
                 Analytics.trackEvent(ex.message)
             }
