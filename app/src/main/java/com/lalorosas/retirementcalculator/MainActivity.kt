@@ -12,8 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        AppCenter.start(application, "d1b1c06f-f8d5-4e8c-9350-0e392a7ac164", Analytics::class.java, Crashes::class.java);
+        AppCenter.start(application, "45ca6e4c-79dd-470b-ae5d-cc9ba731de45", Analytics::class.java, Crashes::class.java);
 
         calculateButton.setOnClickListener {
             // Crashes.generateTestCrash()
